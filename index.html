@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-застосунок із шифруванням</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="main-wrapper">
+        <div id="login-page" class="card page active">
+            <h1 class="form-title">Авторизація</h1>
+            <form id="login-form" class="form-group">
+                <input type="text" id="login-username" placeholder="Логін" pattern="[a-zA-Z]+" required 
+                    title="Логін має містити лише англійські літери">
+                <input type="password" id="login-password" placeholder="Пароль" required>
+                <button type="submit">Увійти</button>
+            </form>
+
+            <h2 class="form-title">Реєстрація</h2>
+            <form id="register-form" class="form-group">
+                <input type="text" id="register-username" placeholder="Логін" pattern="[a-zA-Z]+" required 
+                    title="Логін має містити лише англійські літери">
+                <input type="password" id="register-password" placeholder="Пароль" 
+                    pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}" 
+                    title="Мінімум 8 символів, щонайменше одна велика літера, одна маленька, одна цифра та один спеціальний символ." 
+                    required>
+                <button type="submit">Зареєструватися</button>
+            </form>
+        </div>
+
+        <div id="admin-page" class="card page hidden">
+            <h1 class="form-title">Сторінка адміністратора</h1>
+            <table id="user-table">
+                <thead>
+                    <tr>
+                        <th>Логін</th>
+                        <th>Пароль</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Заповнюється динамічно -->
+                </tbody>
+            </table>
+            <button id="logout-admin">Вийти</button>
+        </div>
+
+        <div id="user-page" class="card page hidden">
+            <h1 class="form-title">Сторінка користувача</h1>
+            <p>Симетричне шифрування — це метод захисту даних, який використовує один і той самий ключ для шифрування та розшифрування інформації. Цей підхід базується на принципі, що обидві сторони, які обмінюються зашифрованими даними, мають заздалегідь узгодити та зберігати в таємниці цей ключ.
+
+Основною перевагою симетричного шифрування є його висока швидкість і ефективність. Завдяки простоті алгоритмів, які використовуються в цьому типі шифрування, такі системи можуть обробляти великі обсяги даних за короткий час.
+
+До найвідоміших алгоритмів симетричного шифрування належать:
+
+AES (Advanced Encryption Standard) — сучасний стандарт шифрування, який вважається дуже надійним.
+DES (Data Encryption Standard) — старий стандарт, який сьогодні використовується рідко через вразливість до атак.
+Triple DES (3DES) — покращена версія DES, яка підвищує рівень безпеки шляхом використання трьох послідовних шифрувань.
+Однак у симетричного шифрування є й свої недоліки. Основна проблема — безпечна передача ключа між сторонами. Якщо зловмисник отримає доступ до ключа, він зможе легко розшифрувати всю інформацію. Через це симетричне шифрування часто використовують у поєднанні з асиметричним шифруванням для забезпечення безпеки ключів.
+
+Симетричне шифрування є основою багатьох сучасних систем захисту даних, таких як захист файлів, мережевий трафік або банківські транзакції. Його ефективність та простота роблять його незамінним інструментом у сфері кібербезпеки.</p>
+            <button id="logout-user">Вийти</button>
+        </div>
+    </div>
+</body>
+</html>
